@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="932d6ba3bd8b4c2aa4a9aa4e174441bf" Name="Diagrama1">
+      <Diagram DiagramId="932d6ba3bd8b4c2aa4a9aa4e174441bf" Name="Diagrama1" ZoomLevel="114">
         <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_Almacenes" Width="1.5" PointX="0.75" PointY="23" IsExpanded="true" />
         <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_DetalleSolicitudEntrada" Width="1.5" PointX="7.5" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_DocumentosReferencia" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
@@ -15,7 +15,7 @@
         <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_Productos" Width="1.5" PointX="11.25" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_ReservaStock" Width="1.5" PointX="10.25" PointY="30" IsExpanded="true" />
         <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_SolicitudesEntrada" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
-        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_DetalleOrdenCalidad" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_DetalleOrdenCalidad" Width="1.5" PointX="0.875" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_DetallePlanCalidad" Width="1.5" PointX="5.75" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_Especialista" Width="1.5" PointX="13.75" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_EspecialistaCalendario" Width="1.5" PointX="13.75" PointY="7.125" IsExpanded="true" />

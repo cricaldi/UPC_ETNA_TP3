@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using ETNA.MVC.FacturasServices;
+using ETNA.MVC.InformesReclamosServices;
+using ETNA.MVC.Models.PV;
+using AutoMapper;
 
 namespace ETNA.MVC.Controllers.PV
 {
@@ -13,7 +18,14 @@ namespace ETNA.MVC.Controllers.PV
 
         public ActionResult Index()
         {
-            return View();
+            var service = new InformesReclamosServices.InformesReclamosClient();
+            var dtos = service.ListaInfomesReclamos();
+
+            Mapper.CreateMap<InformeReclamoDto, InformeReclamoViewModel>();
+            var model = Mapper.Map<List<InformeReclamoViewModel>>(dtos);
+
+
+            return View(model);
         }
 
         //
@@ -21,7 +33,19 @@ namespace ETNA.MVC.Controllers.PV
 
         public ActionResult Details(int id)
         {
-            return View();
+            @ViewBag.Id = id;
+
+
+            //Invocamos al servicio
+            var service = new InformesReclamosServices.InformesReclamosClient();
+
+            //Como código de empleado le pasamos el current user id (es importante que coincida con el empleado id)
+            var informesDto = service.ObtenerInformeReclamo(id);
+
+            //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
+            var model = Mapper.Map<InformeReclamoViewModel>(informesDto);
+
+            return View(model);
         }
 
         //
@@ -36,7 +60,7 @@ namespace ETNA.MVC.Controllers.PV
         // POST: /InformeReclamo/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(InformeReclamoViewModel model)
         {
             try
             {
@@ -55,20 +79,32 @@ namespace ETNA.MVC.Controllers.PV
 
         public ActionResult Edit(int id)
         {
-            return View();
+            //Invocamos al servicio
+            var service = new InformesReclamosServices.InformesReclamosClient();
+
+            //Como código de empleado le pasamos el current user id (es importante que coincida con el empleado id)
+            var informeDto = service.ObtenerInformeReclamo(id);
+
+            //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
+            var model1 = Mapper.Map<InformeReclamoViewModel>(informeDto);
+            return View(model1);
         }
 
         //
         // POST: /InformeReclamo/Edit/5
+        
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(InformeReclamoViewModel model1)
         {
-            try
-            {
-                // TODO: Add update logic here
+          try
+          {
+                var service = new InformesReclamosClient();
 
-                return RedirectToAction("Index");
+                service.EditarInformeReclamo(model1.InformeReclamoId, model1.CodigoInforme, model1.Descripcion, model1.DetalleInforme, model1.FechaAprobacion, model1.FechaElaboracion, model1.ObservacionAprobador, model1.Estado, model1.ReclamoId,model1.ElaboradoPorId,model1.AprobadoPorId);
+          
+                return RedirectToAction("Index", new { modifico = true });
+
             }
             catch
             {

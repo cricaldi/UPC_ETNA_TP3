@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="INTEGRADOModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="INTEGRADOModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="INTEGRADOModelStoreContainer">
           <EntitySet Name="TB_AL_Almacenes" EntityType="INTEGRADOModel.Store.TB_AL_Almacenes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TB_AL_DetalleSolicitudEntrada" EntityType="INTEGRADOModel.Store.TB_AL_DetalleSolicitudEntrada" store:Type="Tables" Schema="dbo" />
@@ -755,9 +755,9 @@
           <Property Name="CodigoInforme" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DetalleInforme" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="FechaAprobacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaAprobacion" Type="datetime" />
           <Property Name="FechaElaboracion" Type="datetime" Nullable="false" />
-          <Property Name="ObservacionAprobador" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ObservacionAprobador" Type="nvarchar(max)" />
           <Property Name="Estado" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ReclamoId" Type="int" Nullable="false" />
           <Property Name="ElaboradoPorId" Type="int" Nullable="false" />
@@ -869,7 +869,7 @@
           <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Cargo" Type="nvarchar(max)" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="GrupoVentaId" Type="int" Nullable="false" />
+          <Property Name="GrupoVentaId" Type="int" />
           <Property Name="DocIdentidad" Type="varchar" MaxLength="20" />
           <Property Name="Activo" Type="bit" Nullable="false" />
         </EntityType>
@@ -904,6 +904,7 @@
           </Key>
           <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="RoleDescription" Type="varchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="TB_SE_UserProfile">
           <Key>
@@ -1900,8 +1901,7 @@
         <Property Name="Codigo" Type="nchar" MaxLength="10" />
         <Property Name="Descripción" Type="nchar" MaxLength="10" />
       </EntityType>-->
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="INTEGRADOModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -2612,9 +2612,9 @@
           <Property Name="CodigoInforme" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="DetalleInforme" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="FechaAprobacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaAprobacion" Type="DateTime" Precision="3" Nullable="true" />
           <Property Name="FechaElaboracion" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ObservacionAprobador" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ObservacionAprobador" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
           <Property Name="Estado" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="ReclamoId" Type="Int32" Nullable="false" />
           <Property Name="ElaboradoPorId" Type="Int32" Nullable="false" />
@@ -2739,7 +2739,7 @@
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Cargo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="GrupoVentaId" Type="Int32" Nullable="false" />
+          <Property Name="GrupoVentaId" Type="Int32" />
           <Property Name="DocIdentidad" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="TB_AL_DocumentosReferencia" Relationship="INTEGRADOModel.FK_EmpleadoDocumentoReferencia" FromRole="TB_RH_Empleados" ToRole="TB_AL_DocumentosReferencia" />
@@ -2785,6 +2785,7 @@
           <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="TB_SE_UserProfile" Relationship="INTEGRADOModel.TB_SE_UsersInRoles" FromRole="TB_SE_Roles" ToRole="TB_SE_UserProfile" />
+          <Property Type="String" Name="RoleDescription" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TB_SE_UserProfile">
           <Key>
@@ -4179,6 +4180,7 @@
           <EntitySetMapping Name="TB_SE_Roles">
             <EntityTypeMapping TypeName="INTEGRADOModel.TB_SE_Roles">
               <MappingFragment StoreEntitySet="TB_SE_Roles">
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
               </MappingFragment>

@@ -28,7 +28,7 @@ namespace ETNA.WCF.PV
             foreach (var programa in lista)
             {
                 var dto = new PlantillaDto();
-                dto.Id= programa.Id;
+                dto.Id= programa.PlantillaId;
                 dto.Descripcion= programa.Descripcion;
                 dto.Estado = programa.Estado;
                

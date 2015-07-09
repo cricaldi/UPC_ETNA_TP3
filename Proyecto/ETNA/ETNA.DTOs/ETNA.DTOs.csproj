@@ -54,6 +54,7 @@
     <Compile Include="PV\ClienteDto.cs" />
     <Compile Include="PV\FacturaDetalleDto.cs" />
     <Compile Include="PV\FacturaDto.cs" />
+    <Compile Include="PV\InformeReclamoDto.cs" />
     <Compile Include="PV\PlantillaDto.cs" />
     <Compile Include="PV\ProgramacionDto.cs" />
     <Compile Include="PV\ReclamoDto.cs" />

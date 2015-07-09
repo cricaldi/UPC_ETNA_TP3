@@ -73,6 +73,7 @@
     <Content Include="FB\LotesService.svc" />
     <Content Include="LO\EntradasYSalidasService.svc" />
     <Content Include="PV\Facturas.svc" />
+    <Content Include="PV\InformesReclamos.svc" />
     <Content Include="PV\Plantillas.svc" />
     <Content Include="PV\Programacion.svc" />
     <Content Include="PV\Reclamos.svc" />
@@ -92,6 +93,10 @@
       <DependentUpon>Facturas.svc</DependentUpon>
     </Compile>
     <Compile Include="PV\IFacturas.cs" />
+    <Compile Include="PV\IInformesReclamos.cs" />
+    <Compile Include="PV\InformesReclamos.svc.cs">
+      <DependentUpon>InformesReclamos.svc</DependentUpon>
+    </Compile>
     <Compile Include="PV\IPlantillas.cs" />
     <Compile Include="PV\IProgramacion.cs" />
     <Compile Include="PV\IReclamos.cs" />
@@ -107,7 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ClassDiagram1.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

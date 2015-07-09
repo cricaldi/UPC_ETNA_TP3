@@ -1,0 +1,107 @@
+﻿@using System.Globalization
+@model IEnumerable<ETNA.MVC.Models.PV.InformeReclamoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
+
+<style type="text/css">
+    .centrado {
+        text-align: center;
+    }
+     
+</style>
+
+
+<h2>Informes de Reclamos Registrados</h2> 
+<p>
+    @Html.ActionLink("Crear Informe", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoInforme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaElaboracion)
+        </th>
+       
+         <th>
+            @Html.DisplayNameFor(model => model.CodigoReclamo)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionEstado)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.FechaAprobacion)
+        </th>
+       
+        <th>Opciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoInforme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaElaboracion).ToString()))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoReclamo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        </td>
+ 
+        <td>
+            @if (item.FechaAprobacion.ToString("yyyy-MM-dd") == "0001-01-01")
+            {
+
+                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaAprobacion).ToString()));
+            }
+     
+        </td>
+       
+        <td>
+                 
+            @if (item.Estado == "E" )
+            {
+                @Html.ActionLink("Modificar", "Edit", new {id = item.InformeReclamoId })
+            }
+            else
+            {
+                <a href="#" class="btndenegado">Modificar</a>
+            } |
+
+            @Html.ActionLink("Ver", "Details", new { id=item.InformeReclamoId   }) 
+     
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Regresar", "Index", "Postventa")
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".btndenegado").click(function() {
+                alert("No se puede editar, por que se encuentra Aprobado o Rechazado");
+            });
+        });
+    </script>
+
+}

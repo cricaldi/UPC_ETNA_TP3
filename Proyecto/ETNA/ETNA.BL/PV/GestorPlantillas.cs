@@ -10,32 +10,33 @@ namespace ETNA.BL.PV
 {
     public class GestorPlantillas
     {
-        public List<Plantilla> Listar()
+        public List<TB_PV_Plantillas> Listar()
         {
-            var context = new ETNADbModelContainer();
-            return context.Plantillas.ToList();
+            var context = new INTEGRADOModelContainer();
+            return context.TB_PV_Plantillas.ToList();
         }
 
         public int InsertarPlantilla(string descripcion, string estado, int tipoPlantillaId)
         {
-            var context = new ETNADbModelContainer();
-            var objPlantilla = new Plantilla();
+            var context = new INTEGRADOModelContainer();
+            var objPlantilla = new TB_PV_Plantillas();
             objPlantilla.Descripcion = descripcion;
             objPlantilla.Estado = estado;
-            objPlantilla.TipoPlantilla = context.TiposPlantilla.Find(tipoPlantillaId);
-            context.Plantillas.Add(objPlantilla);
+            objPlantilla.TB_PV_TiposPlantilla = context.TB_PV_TiposPlantilla.Find(tipoPlantillaId);
+            objPlantilla.TipoPlantillaId = objPlantilla.TB_PV_TiposPlantilla.TipoPlantillaId;
+            context.TB_PV_Plantillas.Add(objPlantilla);
             context.SaveChanges();
-            return objPlantilla.Id;
+            return objPlantilla.PlantillaId;
         }
 
         public bool EditarPlantilla(int idPlantilla, string descripcion, string estado, int tipoPlantillaId)
         {
-            var context = new ETNADbModelContainer();
-            var plantilla = context.Plantillas.Find(idPlantilla);
+            var context = new INTEGRADOModelContainer();
+            var plantilla = context.TB_PV_Plantillas.Find(idPlantilla);
             plantilla.Descripcion = descripcion;
             plantilla.Estado = estado;
-            plantilla.TipoPlantilla = context.TiposPlantilla.Find(tipoPlantillaId);
-
+            plantilla.TB_PV_TiposPlantilla = context.TB_PV_TiposPlantilla.Find(tipoPlantillaId);
+            plantilla.TipoPlantillaId = plantilla.TB_PV_TiposPlantilla.TipoPlantillaId;
             context.SaveChanges();
             return true;
         }

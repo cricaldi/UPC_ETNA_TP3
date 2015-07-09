@@ -750,9 +750,9 @@
     <Property Name="CodigoInforme" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DetalleInforme" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FechaAprobacion" Type="datetime" Nullable="false" />
+    <Property Name="FechaAprobacion" Type="datetime" />
     <Property Name="FechaElaboracion" Type="datetime" Nullable="false" />
-    <Property Name="ObservacionAprobador" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ObservacionAprobador" Type="nvarchar(max)" />
     <Property Name="Estado" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ReclamoId" Type="int" Nullable="false" />
     <Property Name="ElaboradoPorId" Type="int" Nullable="false" />
@@ -864,7 +864,7 @@
     <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cargo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
-    <Property Name="GrupoVentaId" Type="int" Nullable="false" />
+    <Property Name="GrupoVentaId" Type="int" />
     <Property Name="DocIdentidad" Type="varchar" MaxLength="20" />
     <Property Name="Activo" Type="bit" Nullable="false" />
   </EntityType>
@@ -899,6 +899,7 @@
     </Key>
     <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="TB_SE_UserProfile">
     <Key>

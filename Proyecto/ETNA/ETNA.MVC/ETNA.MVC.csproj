@@ -198,6 +198,7 @@
     <Compile Include="Models\LO\SolicitudEntradaViewModel.cs" />
     <Compile Include="Models\PV\FacturaDetalleViewModel.cs" />
     <Compile Include="Models\PV\FacturaViewModel.cs" />
+    <Compile Include="Models\PV\InformeReclamoViewModel.cs" />
     <Compile Include="Models\PV\PlantillaViewModel.cs" />
     <Compile Include="Models\PV\ProgramacionViewModel.cs" />
     <Compile Include="Models\PV\ReclamoViewModel.cs" />
@@ -208,6 +209,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\FacturasServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InformesReclamosServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -343,6 +349,19 @@
     <None Include="Service References\FacturasServices\Facturas4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\InformesReclamosServices\ETNA.MVC.InformesReclamosServices.InformeReclamoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\InformesReclamosServices\InformesReclamos.wsdl" />
+    <None Include="Service References\InformesReclamosServices\InformesReclamos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformesReclamosServices\InformesReclamos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformesReclamosServices\InformesReclamos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\LogisticaServices\EntradasYSalidasService.disco" />
     <None Include="Service References\LogisticaServices\configuration91.svcinfo" />
     <None Include="Service References\LogisticaServices\configuration.svcinfo" />
@@ -357,6 +376,13 @@
     <None Include="Service References\FacturasServices\configuration91.svcinfo" />
     <None Include="Service References\FacturasServices\configuration.svcinfo" />
     <None Include="Service References\FacturasServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\InformesReclamosServices\InformesReclamos.disco" />
+    <None Include="Service References\InformesReclamosServices\configuration91.svcinfo" />
+    <None Include="Service References\InformesReclamosServices\configuration.svcinfo" />
+    <None Include="Service References\InformesReclamosServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -503,6 +529,9 @@
     <Content Include="Views\Programacion\Edit.cshtml" />
     <Content Include="Views\Programacion\Create.cshtml" />
     <Content Include="Views\Plantilla\Index.cshtml" />
+    <Content Include="Views\InformeReclamo\Index.cshtml" />
+    <Content Include="Views\InformeReclamo\Details.cshtml" />
+    <Content Include="Views\InformeReclamo\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -522,6 +551,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\FabricacionServices\" />
     <WCFMetadataStorage Include="Service References\FacturasServices\" />
+    <WCFMetadataStorage Include="Service References\InformesReclamosServices\" />
     <WCFMetadataStorage Include="Service References\LogisticaServices\" />
     <WCFMetadataStorage Include="Service References\PlantillasServices\" />
     <WCFMetadataStorage Include="Service References\PostVentaServices\" />

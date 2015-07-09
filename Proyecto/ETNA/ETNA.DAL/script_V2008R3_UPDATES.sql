@@ -124,3 +124,91 @@ INSERT INTO TB_RH_Empleados (Nombres, Apellidos, Direccion, Cargo, UserId, Activ
 VALUES ('MARTIN','IBERICO','RECUAY 223','ASISTENTE ALMACEN',9, 1);
 INSERT INTO TB_RH_Empleados (Nombres, Apellidos, Direccion, Cargo, UserId, Activo) 
 VALUES ('CAROLINA','ROJAS','ALCANFORES 233','ASISTENTE ALMACEN',10, 1);
+
+ALTER TABLE TB_AL_Productos
+ALTER COLUMN CodigoProducto VARCHAR(10) NULL
+GO
+
+/* Productos disponibles para ETNA */
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-U1R', 'BATERIA U1R','','',10,20, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-NS40', 'BATERIA NS40','','',20,30, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-N4051', 'BATERIA N4051','','',30,40, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-NS60', 'BATERIA NS60','','',40,50, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-L18', 'BATERIA L18','','',50,60, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-L1', 'BATERIA L1','','',70,80, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-42', 'BATERIA 42','','',80,90, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-40R', 'BATERIA 40R','','',90,100, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-026', 'BATERIA 026','','',100,110, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-D26', 'BATERIA D26','','',110,120, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-D31', 'BATERIA D31','','',120,130, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-31A', 'BATERIA 31A','','',130,140, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-31T', 'BATERIA 31T','','',140,150, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-N200', 'BATERIA N200','','',150,160, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-N200 PRO', 'BATERIA N200 PRO','','',160,170, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('B-4Y', 'BATERIA 4Y','','',170,180, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('P-AH2O', 'AGUA DESTILADA','','',180,190, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('P-VOL', 'VOLTIMETRO','','',190,200, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('P-ALT', 'ALTERNADOR','','',200,250, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('P-PLO', 'PLOMO','','',10,20, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('P-MAL', 'MALLA METALICA','','',20,30, 1);
+INSERT INTO TB_AL_Productos (CodigoProducto, Nombre, DescripcionCorta,DescripcionLarga, PrecioListaCompra, PrecioListaVenta, Estado)
+VALUES ('P-ANI', 'ANIONES','','',30,40, 1);
+
+/** SCCRIPT DE INSERCION -- Modulo Encuesta POSTVENTA **/
+INSERT INTO TB_PV_TiposPlantilla (Descripcion) VALUES ('Ventas');
+INSERT INTO TB_PV_TiposPlantilla (Descripcion) VALUES ('Reclamos');
+INSERT INTO TB_PV_TiposPlantilla (Descripcion) VALUES ('Garantias');
+
+INSERT INTO TB_PV_Plantillas (Descripcion, Estado, TipoPlantillaId) VALUES ('Proceso de Venta', 'A', 1);
+INSERT INTO TB_PV_Plantillas (Descripcion, Estado, TipoPlantillaId) VALUES ('Calidad Producto', 'A', 2);
+INSERT INTO TB_PV_Plantillas (Descripcion, Estado, TipoPlantillaId) VALUES ('Atención Reclamos', 'A', 3);
+INSERT INTO TB_PV_Plantillas (Descripcion, Estado, TipoPlantillaId) VALUES ('Calidad Atención Reclamo', 'A', 3);
+
+INSERT INTO TB_PV_PlantillasDetalle (CodigoPregunta, DescripcionPregunta, Respuesta1, Respuesta2, Respuesta3, Respuesta4, Respuesta5, PlantillaId) 
+VALUES ('TEMP01-PR01', '¿que mejoras darias en servicio de ventas?', 'atencion personalizada al cliente', 'mejor analisis de evaluacion de ventas mensuales', 'aumento de porcentaje en comision', '', '', 1);
+INSERT INTO TB_PV_PlantillasDetalle (CodigoPregunta, DescripcionPregunta, Respuesta1, Respuesta2, Respuesta3, Respuesta4, Respuesta5, PlantillaId)
+VALUES ('TEMP01-PR02', '¿que motivacion necesita para realizar mas ventas?', 'bonificaciones en vacaciones', 'aumento de sueldo por mayoria de contratos ejecutados', 'ascensos de puestos', 'reconocimientos certificados en venta con historial en la hoja de vida', 'aumento de 15 dias de vacaciones', 1);
+
+ALTER TABLE TB_VT_Clientes
+DROP COLUMN Nombre
+GO
+
+ALTER TABLE TB_VT_Clientes
+DROP CONSTRAINT FK_Clientes_Direccion
+GO
+
+ALTER TABLE TB_VT_Clientes
+DROP COLUMN DireccionPrincipalId
+GO
+
+INSERT INTO TB_VT_Clientes (ClienteId, TipoTerceroId, Direccion, DocIdentidad, ApellidoPaterno, ApellidoMaterno, PrimerNombre, SegundoNombre, Email, RazonSocial, TipoDocIdentidadId, Activo, LineaCredito, ModalidadCreditoId, DiasCredito, TipoMedioDePagoId, CreditoContado, CategoriaClienteId, LineaCreditoActiva, CodigoPais, Telefono, Observaciones) 
+VALUES (1, 1, 'Av. General Juan Antonio Prezet 1995', '98765432','Ponce', 'Pozo', 'Erika', 'Mellisa', 'malozaponce@gmail.com', 'DIGEMID - Ministerio de Salud', 1, 1, 0, 1, 0, 1, 1, 1, 0, 'es', '985578456', '');
+INSERT INTO TB_VT_Clientes (ClienteId, TipoTerceroId, Direccion, DocIdentidad, ApellidoPaterno, ApellidoMaterno, PrimerNombre, SegundoNombre, Email, RazonSocial, TipoDocIdentidadId, Activo, LineaCredito, ModalidadCreditoId, DiasCredito, TipoMedioDePagoId, CreditoContado, CategoriaClienteId, LineaCreditoActiva, CodigoPais, Telefono, Observaciones) 
+VALUES (2, 1, 'Av. El Polo 332','67389832','Ramos', 'Huatuco', 'Victor', 'Manuel', 'pilon@gmail.com', 'MAQUINARIAS SA', 1, 1, 0, 1, 0, 1, 1, 1, 0, 'es', '985578456', '');
+INSERT INTO TB_VT_Clientes (ClienteId, TipoTerceroId, Direccion, DocIdentidad, ApellidoPaterno, ApellidoMaterno, PrimerNombre, SegundoNombre, Email, RazonSocial, TipoDocIdentidadId, Activo, LineaCredito, ModalidadCreditoId, DiasCredito, TipoMedioDePagoId, CreditoContado, CategoriaClienteId, LineaCreditoActiva, CodigoPais, Telefono, Observaciones) 
+VALUES (3, 1, 'Av. Arequipa Crd. 7 - El gallinero','72638233','Calderon', 'De la Barca', 'Omar', 'Patuzo', 'paddi@gmail.com', 'Gamarra Shopping Center SAC', 1, 1, 0, 1, 0, 1, 1, 1, 0, 'es', '985578456', '');
+INSERT INTO TB_VT_Clientes (ClienteId, TipoTerceroId, Direccion, DocIdentidad, ApellidoPaterno, ApellidoMaterno, PrimerNombre, SegundoNombre, Email, RazonSocial, TipoDocIdentidadId, Activo, LineaCredito, ModalidadCreditoId, DiasCredito, TipoMedioDePagoId, CreditoContado, CategoriaClienteId, LineaCreditoActiva, CodigoPais, Telefono, Observaciones) 
+VALUES (4, 1, 'Psj. Acari 433 Alt. Cdr. 4 Av. Morales Duarez','97389832','Taboada', 'Casas','Paul', 'Carlos','pacharly@gmail.com', 'Linkedin S.R.L', 1, 1, 0, 1, 0, 1, 1, 1, 0, 'es', '985578456', '');
+INSERT INTO TB_VT_Clientes (ClienteId, TipoTerceroId, Direccion, DocIdentidad, ApellidoPaterno, ApellidoMaterno, PrimerNombre, SegundoNombre, Email, RazonSocial, TipoDocIdentidadId, Activo, LineaCredito, ModalidadCreditoId, DiasCredito, TipoMedioDePagoId, CreditoContado, CategoriaClienteId, LineaCreditoActiva, CodigoPais, Telefono, Observaciones) 
+VALUES (5, 1, 'Av. Universitaria Cdr. 45 Dpto. 566','52638233','Luna', 'Vigo', 'Ivan', 'Braulio', 'ivan@gmail.com', 'MAQUINARIAS SA', 1, 1, 0, 1, 0, 1, 1, 1, 0, 'es', '985578456', '');

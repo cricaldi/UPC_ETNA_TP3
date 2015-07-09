@@ -49,13 +49,13 @@ namespace ETNA.WCF.PV
             foreach (var programa in lista)
             {
                 var dto = new ProgramacionDto();
-                dto.Id = programa.Id;
+                dto.Id = programa.ProgramacionId;
                 dto.CodigoProgramacion = programa.CodigoProgramacion;
                 dto.Descripcion = programa.Descripcion;
                 dto.Periodicidad = programa.Periodicidad;
                 dto.FechaInicio = programa.FechaInicio;
                 dto.FechaFin = programa.FechaFin;
-                dto.NombrePlantilla = programa.Plantilla.Descripcion;
+                dto.NombrePlantilla = programa.TB_PV_Plantillas.Descripcion;
                 dto.PorcentajeEncuestados = programa.PorcentajeEncuestados;
                 dto.DiasVigencia = programa.DiasVigencia;
                 dto.Estado = programa.Estado;
@@ -92,14 +92,14 @@ namespace ETNA.WCF.PV
             var gestorPrograma = new GestorProgramaciones();
             var programa = gestorPrograma.ObtenerProgramacion(idPrograma);
             var dto = new ProgramacionDto();
-            dto.Id = programa.Id;
+            dto.Id = programa.ProgramacionId;
             dto.CodigoProgramacion = programa.CodigoProgramacion;
             dto.Descripcion = programa.Descripcion;
             dto.Periodicidad = programa.Periodicidad;
             dto.FechaInicio = programa.FechaInicio;
             dto.FechaFin = programa.FechaFin;
-            dto.PlantillaId = programa.Plantilla.Id;
-            dto.NombrePlantilla = programa.Plantilla.Descripcion;
+            dto.PlantillaId = programa.TB_PV_Plantillas.PlantillaId;
+            dto.NombrePlantilla = programa.TB_PV_Plantillas.Descripcion;
             dto.PorcentajeEncuestados = programa.PorcentajeEncuestados;
             dto.DiasVigencia = programa.DiasVigencia;
             dto.Estado = programa.Estado;

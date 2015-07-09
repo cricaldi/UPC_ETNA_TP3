@@ -33,7 +33,7 @@ namespace ETNA.DAL
         public string Direccion { get; set; }
         public string Cargo { get; set; }
         public int UserId { get; set; }
-        public int GrupoVentaId { get; set; }
+        public Nullable<int> GrupoVentaId { get; set; }
         public string DocIdentidad { get; set; }
         public bool Activo { get; set; }
     

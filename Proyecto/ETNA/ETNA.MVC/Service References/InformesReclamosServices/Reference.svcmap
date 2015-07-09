@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7668ff09-4f25-4949-aeba-547b5b01b3c0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6078/PV/InformesReclamos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InformesReclamos.wsdl" MetadataType="Wsdl" ID="0234423d-eca9-4f89-9ed5-a0adc642d36d" SourceId="1" SourceUrl="http://localhost:6078/PV/InformesReclamos.svc?wsdl" />
+    <MetadataFile FileName="InformesReclamos.xsd" MetadataType="Schema" ID="d73ff299-f249-40b0-b2f7-b04c5a7b29a7" SourceId="1" SourceUrl="http://localhost:6078/PV/InformesReclamos.svc?xsd=xsd0" />
+    <MetadataFile FileName="InformesReclamos1.xsd" MetadataType="Schema" ID="d61d678d-17ee-408c-8249-a9fc9f1e4f2c" SourceId="1" SourceUrl="http://localhost:6078/PV/InformesReclamos.svc?xsd=xsd1" />
+    <MetadataFile FileName="InformesReclamos2.xsd" MetadataType="Schema" ID="65906f1f-f089-4e75-a586-e00b668e93aa" SourceId="1" SourceUrl="http://localhost:6078/PV/InformesReclamos.svc?xsd=xsd2" />
+    <MetadataFile FileName="InformesReclamos.disco" MetadataType="Disco" ID="e938ecd1-04d2-4a69-ae99-291d25969af9" SourceId="1" SourceUrl="http://localhost:6078/PV/InformesReclamos.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -551,6 +551,7 @@
     <EntitySetMapping Name="TB_SE_Roles">
       <EntityTypeMapping TypeName="INTEGRADOModel.TB_SE_Roles">
         <MappingFragment StoreEntitySet="TB_SE_Roles">
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
         </MappingFragment>

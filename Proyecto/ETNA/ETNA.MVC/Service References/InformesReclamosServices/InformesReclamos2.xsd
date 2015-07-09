@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfInformeReclamoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InformeReclamoDto" nillable="true" type="tns:InformeReclamoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInformeReclamoDto" nillable="true" type="tns:ArrayOfInformeReclamoDto" />
+  <xs:complexType name="InformeReclamoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AprobadoPorId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CodigoInforme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoReclamo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionEstado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleInforme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElaboradoPorId" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaAprobacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaElaboracion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InformeReclamoId" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreAprobador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreElaborador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionAprobador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReclamoId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformeReclamoDto" nillable="true" type="tns:InformeReclamoDto" />
+</xs:schema>

@@ -18,7 +18,7 @@ namespace ETNA.DAL
         public string CodigoInforme { get; set; }
         public string Descripcion { get; set; }
         public string DetalleInforme { get; set; }
-        public System.DateTime FechaAprobacion { get; set; }
+        public Nullable<System.DateTime> FechaAprobacion { get; set; }
         public System.DateTime FechaElaboracion { get; set; }
         public string ObservacionAprobador { get; set; }
         public string Estado { get; set; }
