@@ -40,8 +40,6 @@ C:\ETNA\ETNA\ETNA.BL\bin\Debug\es\EntityFramework.resources.dll
 C:\ETNA\ETNA\ETNA.BL\obj\Debug\ETNA.BL.csprojResolveAssemblyReference.cache
 C:\ETNA\ETNA\ETNA.BL\obj\Debug\ETNA.BL.dll
 C:\ETNA\ETNA\ETNA.BL\obj\Debug\ETNA.BL.pdb
-D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\obj\Debug\ETNA.BL.pdb
-D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\obj\Debug\ETNA.BL.csprojResolveAssemblyReference.cache
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\bin\Debug\ETNA.BL.dll
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\bin\Debug\ETNA.BL.pdb
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\bin\Debug\EntityFramework.dll
@@ -53,4 +51,6 @@ D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\bin\Debug\ETNA.DAL.pdb
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\bin\Debug\ETNA.Domain.pdb
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\bin\Debug\EntityFramework.xml
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\bin\Debug\es\EntityFramework.resources.dll
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\obj\Debug\ETNA.BL.csprojResolveAssemblyReference.cache
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\obj\Debug\ETNA.BL.dll
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.BL\obj\Debug\ETNA.BL.pdb

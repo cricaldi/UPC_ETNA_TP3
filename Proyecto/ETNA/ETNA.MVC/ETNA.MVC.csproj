@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FB\FabricacionController.cs" />
     <Compile Include="Controllers\FB\LoteController.cs" />
+    <Compile Include="Controllers\FB\SolicitudProduccionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LO\GuiaEntradaController.cs" />
     <Compile Include="Controllers\LO\LogisticaController.cs" />
@@ -192,6 +193,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\FB\LoteViewModel.cs" />
+    <Compile Include="Models\FB\SolicitudProduccionViewModel.cs" />
     <Compile Include="Models\LO\AlmacenViewModel.cs" />
     <Compile Include="Models\LO\AltaGuiaEntradaModel.cs" />
     <Compile Include="Models\LO\DetalleSolicitudEntradaViewModel.cs" />
@@ -540,6 +542,7 @@
     <Content Include="Views\InformeReclamo\Details.cshtml" />
     <Content Include="Views\InformeReclamo\Edit.cshtml" />
     <Content Include="Views\Fabricacion\Index.cshtml" />
+    <Content Include="Views\SolicitudProduccion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
