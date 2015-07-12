@@ -5,3 +5,68 @@
 }
 
 <h2>Listado de solicitudes </h2>
+
+<table class="ui-tabs-selected" style="width:100%">
+    <tr>
+       
+    </tr>
+    <tr>
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().SolicitudProdId)
+        </th>
+        
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().FecSol)
+        </th>
+       
+         <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().Descripcion)
+        </th>            
+   
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().CantPersonal)
+        </th>
+
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().CantInsumos)
+        </th>
+
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().CantMaquinaria)
+        </th>
+
+        <th>Opciones</th>
+    </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SolicitudProdId)
+        </td>    
+
+        <td>
+            @Html.DisplayFor(modelItem => item.FecSol)
+        </td>     
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>         
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CantPersonal)
+        </td>         
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CantMaquinaria)
+        </td>         
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CantInsumos)
+        </td>         
+
+        <td>
+            <a class="codigoDetalle" data-SolicitudProdId="@item.SolicitudProdId" >Seleccionar</a>
+        </td>
+    </tr>
+}
+ </table>

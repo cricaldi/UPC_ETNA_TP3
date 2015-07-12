@@ -14,5 +14,6 @@ C:\ETNA\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.dll
 C:\ETNA\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.pdb
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.Domain\bin\Debug\ETNA.Domain.dll
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.Domain\bin\Debug\ETNA.Domain.pdb
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.csprojResolveAssemblyReference.cache
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.dll
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.pdb

@@ -323,20 +323,20 @@
     <Content Include="Service References\FabricacionServices\ETNA.MVC.FabricacionServices.TB_PR_SolicitudProduccion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\FabricacionServices\FabricacionService.disco" />
-    <Content Include="Service References\FabricacionServices\configuration91.svcinfo" />
-    <Content Include="Service References\FabricacionServices\configuration.svcinfo" />
-    <Content Include="Service References\FabricacionServices\Reference.svcmap">
+    <None Include="Service References\FabricacionServices\FabricacionService.disco" />
+    <None Include="Service References\FabricacionServices\configuration91.svcinfo" />
+    <None Include="Service References\FabricacionServices\configuration.svcinfo" />
+    <None Include="Service References\FabricacionServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Service References\FacturasServices\ETNA.MVC.FacturasServices.FacturaDetalleDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\FacturasServices\ETNA.MVC.FacturasServices.FacturaDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\FabricacionServices\FabricacionService.wsdl" />
+    <None Include="Service References\FabricacionServices\FabricacionService.wsdl" />
     <None Include="Service References\FabricacionServices\FabricacionService.xsd">
       <SubType>Designer</SubType>
     </None>
