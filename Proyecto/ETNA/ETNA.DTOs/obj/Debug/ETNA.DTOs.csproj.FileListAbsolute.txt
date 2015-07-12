@@ -19,3 +19,10 @@ C:\ETNA\ETNA\ETNA.DTOs\bin\Debug\ETNA.Domain.pdb
 C:\ETNA\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.csprojResolveAssemblyReference.cache
 C:\ETNA\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.dll
 C:\ETNA\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.pdb
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.DTOs\bin\Debug\ETNA.DTOs.dll
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.DTOs\bin\Debug\ETNA.DTOs.pdb
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.DTOs\bin\Debug\ETNA.Domain.dll
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.DTOs\bin\Debug\ETNA.Domain.pdb
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.csprojResolveAssemblyReference.cache
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.dll
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.pdb
