@@ -175,6 +175,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FB\FabricacionController.cs" />
     <Compile Include="Controllers\FB\LoteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LO\GuiaEntradaController.cs" />
@@ -317,22 +318,35 @@
     <Content Include="Service References\FabricacionServices\ETNA.MVC.FabricacionServices.LoteDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\FabricacionServices\LotesService.wsdl" />
-    <None Include="Service References\FabricacionServices\LotesService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FabricacionServices\LotesService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\FabricacionServices\LotesService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Service References\FabricacionServices\ETNA.MVC.FabricacionServices.TB_PR_SolicitudProduccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\FabricacionServices\FabricacionService.disco" />
+    <Content Include="Service References\FabricacionServices\configuration91.svcinfo" />
+    <Content Include="Service References\FabricacionServices\configuration.svcinfo" />
+    <Content Include="Service References\FabricacionServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="Service References\FacturasServices\ETNA.MVC.FacturasServices.FacturaDetalleDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\FacturasServices\ETNA.MVC.FacturasServices.FacturaDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\FabricacionServices\FabricacionService.wsdl" />
+    <None Include="Service References\FabricacionServices\FabricacionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FabricacionServices\FabricacionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FabricacionServices\FabricacionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FabricacionServices\FabricacionService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\FacturasServices\Facturas.wsdl" />
     <None Include="Service References\FacturasServices\Facturas.xsd">
       <SubType>Designer</SubType>
@@ -365,13 +379,6 @@
     <None Include="Service References\LogisticaServices\EntradasYSalidasService.disco" />
     <None Include="Service References\LogisticaServices\configuration91.svcinfo" />
     <None Include="Service References\LogisticaServices\configuration.svcinfo" />
-    <None Include="Service References\FabricacionServices\LotesService.disco" />
-    <None Include="Service References\FabricacionServices\configuration91.svcinfo" />
-    <None Include="Service References\FabricacionServices\configuration.svcinfo" />
-    <None Include="Service References\FabricacionServices\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\FacturasServices\Facturas.disco" />
     <None Include="Service References\FacturasServices\configuration91.svcinfo" />
     <None Include="Service References\FacturasServices\configuration.svcinfo" />
@@ -532,6 +539,7 @@
     <Content Include="Views\InformeReclamo\Index.cshtml" />
     <Content Include="Views\InformeReclamo\Details.cshtml" />
     <Content Include="Views\InformeReclamo\Edit.cshtml" />
+    <Content Include="Views\Fabricacion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

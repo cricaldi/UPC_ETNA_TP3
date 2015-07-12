@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +76,12 @@
     <Compile Include="FacturaDetalle.cs">
       <DependentUpon>ETNADbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FB\TB_PR_Insumo.cs" />
+    <Compile Include="FB\TB_PR_LoteFabricacion.cs" />
+    <Compile Include="FB\TB_PR_Maquinaria.cs" />
+    <Compile Include="FB\TB_PR_SolicitudProduccion.cs" />
+    <Compile Include="FB\TB_PR_SolicitudProduccionDet.cs" />
+    <Compile Include="FB\TB_RH_Empleados.cs" />
     <Compile Include="GuiaEntrada.cs">
       <DependentUpon>ETNADbModel.tt</DependentUpon>
     </Compile>

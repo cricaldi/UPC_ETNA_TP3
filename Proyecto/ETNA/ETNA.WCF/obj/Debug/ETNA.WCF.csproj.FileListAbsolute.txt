@@ -67,6 +67,7 @@ C:\ETNA\ETNA\ETNA.WCF\bin\es\EntityFramework.resources.dll
 C:\ETNA\ETNA\ETNA.WCF\obj\Debug\ETNA.WCF.csprojResolveAssemblyReference.cache
 C:\ETNA\ETNA\ETNA.WCF\obj\Debug\ETNA.WCF.dll
 C:\ETNA\ETNA\ETNA.WCF\obj\Debug\ETNA.WCF.pdb
+D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\obj\Debug\ETNA.WCF.csprojResolveAssemblyReference.cache
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\bin\AutoMapper.Net4.dll
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\bin\ETNA.WCF.dll
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\bin\ETNA.WCF.pdb
@@ -87,6 +88,5 @@ D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\bin\AutoMapper.xml
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\bin\AutoMapper.Net4.pdb
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\bin\EntityFramework.xml
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\bin\es\EntityFramework.resources.dll
-D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\obj\Debug\ETNA.WCF.csprojResolveAssemblyReference.cache
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\obj\Debug\ETNA.WCF.dll
 D:\UPC\TP3\UPC_ETNA_TP3\Proyecto\ETNA\ETNA.WCF\obj\Debug\ETNA.WCF.pdb

@@ -17,7 +17,7 @@ namespace ETNA.MVC.Controllers.FB
 
         public ActionResult Index(bool? creado)
         {
-            var service = new FabricacionServices.LotesServiceClient();
+            var service = new FabricacionServices.FabricacionServiceClient();
             var dtos = service.ListaLotes();
 
             Mapper.CreateMap<LoteDto, LoteViewModel>();
@@ -53,7 +53,7 @@ namespace ETNA.MVC.Controllers.FB
         {
             try
             {
-                var service = new FabricacionServices.LotesServiceClient();
+                var service = new FabricacionServices.FabricacionServiceClient();
                 service.InsertarLote(model.NroLote, 1);
                 return RedirectToAction("Index", new {creado = true});
             }
@@ -79,7 +79,7 @@ namespace ETNA.MVC.Controllers.FB
         {
             try
             {
-                var service = new FabricacionServices.LotesServiceClient();
+                var service = new FabricacionServices.FabricacionServiceClient();
                 service.EditarLote(model.Id, model.NroLote);
                 return Index(true);
             }

@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FB\GestorLotes.cs" />
+    <Compile Include="FB\TB_PR_InsumoBL.cs" />
+    <Compile Include="FB\TB_PR_SolicitudProduccionBL.cs" />
     <Compile Include="LO\GestorAlmacenes.cs" />
     <Compile Include="LO\GestorGuiasEntrada.cs" />
     <Compile Include="LO\GestorSolicitudesEntrada.cs" />

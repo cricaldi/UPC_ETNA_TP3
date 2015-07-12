@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ETNA.WCF.FB.FabricacionService" CodeBehind="FabricacionService.svc.cs" %>
