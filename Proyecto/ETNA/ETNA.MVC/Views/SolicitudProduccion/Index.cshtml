@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ETNA.MVC.Models.FB.SolicitudProduccionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de solicitudes </h2>
+
+<table class="ui-tabs-selected" style="width:100%">
+    <tr>
+       
+    </tr>
+    <tr>
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().SolicitudProdId)
+        </th>
+        
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().FecSol)
+        </th>
+       
+         <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().Descripcion)
+        </th>            
+   
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().CantPersonal)
+        </th>
+
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().CantInsumos)
+        </th>
+
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.First().CantMaquinaria)
+        </th>
+
+        <th>Opciones</th>
+    </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SolicitudProdId)
+        </td>    
+
+        <td>
+            @Html.DisplayFor(modelItem => item.FecSol)
+        </td>     
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>         
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CantPersonal)
+        </td>         
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CantMaquinaria)
+        </td>         
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CantInsumos)
+        </td>         
+
+        <td>
+             @Html.ActionLink("Seleccionar", "Select", @item.SolicitudProdId) 
+
+            <a class="codigoDetalle" data-SolicitudProdId="@item.SolicitudProdId" >Seleccionar.....</a>
+        </td>
+    </tr>
+}
+
+<tr>
+        <td colspan="3">Registros: @Model.Count() de @ViewBag.NroRegistros</td>
+        <td>Pagina @ViewBag.Page de @ViewBag.TotalPages</td>
+        <td colspan="3" class="derecha">
+            @for (int i = 1; i <= @ViewBag.TotalPages; i++)
+            {
+                <a class="paginacion" data-pagina="@i">@i</a>
+                @Html.Display(" ")
+            }
+        </td>
+    </tr>
+
+    
+ </table>

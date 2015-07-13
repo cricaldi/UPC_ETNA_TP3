@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6078/FB/FabricacionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ETNA.Domain" />
+  <xs:import schemaLocation="http://localhost:6078/FB/FabricacionService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs.FB" />
+  <xs:element name="TB_PR_SolicitudProduccion_Listar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pCOD_ESTADO" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TB_PR_SolicitudProduccion_ListarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ETNA.Domain" minOccurs="0" name="TB_PR_SolicitudProduccion_ListarResult" nillable="true" type="q1:ArrayOfTB_PR_SolicitudProduccion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarLote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nroLote" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idTipoLote" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarLoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertarLoteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditarLote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idLote" type="xs:int" />
+        <xs:element minOccurs="0" name="nroLote" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditarLoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditarLoteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarLote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idLote" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarLoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EliminarLoteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaLotes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaLotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.FB" minOccurs="0" name="ListaLotesResult" nillable="true" type="q2:ArrayOfLoteDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

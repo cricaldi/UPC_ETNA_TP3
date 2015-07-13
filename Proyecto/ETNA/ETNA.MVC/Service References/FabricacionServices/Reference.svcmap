@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bd9a2b01-9f9a-48b4-b0f3-4879ee1e03a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ef953b4-c528-4060-a1a2-b4a2e3bf02da" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6078/FB/LotesService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:6078/FB/FabricacionService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LotesService.xsd" MetadataType="Schema" ID="760d1005-ad35-47f2-aff7-d4667b75c8c1" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?xsd=xsd0" />
-    <MetadataFile FileName="LotesService.wsdl" MetadataType="Wsdl" ID="495c2cc4-92b0-4761-9e5f-9251d5846cad" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?wsdl" />
-    <MetadataFile FileName="LotesService1.xsd" MetadataType="Schema" ID="365119fe-9fe0-44ba-baec-0809948da9ed" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?xsd=xsd2" />
-    <MetadataFile FileName="LotesService.disco" MetadataType="Disco" ID="444247c0-ce8d-4df7-bee8-7d22f829df3e" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?disco" />
-    <MetadataFile FileName="LotesService2.xsd" MetadataType="Schema" ID="88ef35f3-1094-4b99-a6a3-a6be484448ea" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FabricacionService.xsd" MetadataType="Schema" ID="83c5440d-d088-42e2-bdea-2cc394b1c9ba" SourceId="1" SourceUrl="http://localhost:6078/FB/FabricacionService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FabricacionService1.xsd" MetadataType="Schema" ID="2ce030bd-200d-4dc3-af02-f133bc4f3403" SourceId="1" SourceUrl="http://localhost:6078/FB/FabricacionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FabricacionService.wsdl" MetadataType="Wsdl" ID="7ac708e6-14e8-4901-8244-b26af5a08a56" SourceId="1" SourceUrl="http://localhost:6078/FB/FabricacionService.svc?wsdl" />
+    <MetadataFile FileName="FabricacionService.disco" MetadataType="Disco" ID="d7db60f9-ff1f-4a32-8f4e-0a883fa6529f" SourceId="1" SourceUrl="http://localhost:6078/FB/FabricacionService.svc?disco" />
+    <MetadataFile FileName="FabricacionService2.xsd" MetadataType="Schema" ID="c1817389-0a0d-4f1a-bc1d-ddaca510f645" SourceId="1" SourceUrl="http://localhost:6078/FB/FabricacionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FabricacionService3.xsd" MetadataType="Schema" ID="d54ab6a6-50ad-41d3-bf21-ced2b53830ea" SourceId="1" SourceUrl="http://localhost:6078/FB/FabricacionService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@using Microsoft.Ajax.Utilities
 @model IEnumerable<ETNA.MVC.Models.PV.FacturaDetalleViewModel>
 
@@ -91,3 +92,98 @@
         </td>
     </tr>
 </table>
+=======
+﻿@using Microsoft.Ajax.Utilities
+@model IEnumerable<ETNA.MVC.Models.PV.FacturaDetalleViewModel>
+
+@{
+    ViewBag.Title = "Facturas Detalle";
+    Layout = null;
+}
+<link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
+
+<style type="text/css">
+    .centrado {
+        text-align: center;
+    }
+    .izquierda {
+        text-align: left;
+    }
+    .derecha {
+        text-align: right;
+    }
+    a.nounderline:link   
+    {   
+        text-decoration:none;   
+    }     
+</style>
+
+<!--<h1>Cliente:</h1>-->
+<h2>Facturas Detalle Registradas</h2>
+
+<table class="ui-tabs-selected" style="width:100%">
+    <tr>
+       
+    </tr>
+    <tr>
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.NroFactura)
+        </th>
+         <th class="centrado">
+            @Html.DisplayNameFor(model => model.FechaFactura)
+        </th>
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.NombreCliente)
+        </th>
+
+            
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.NombreProducto)
+        </th>
+        
+        <th class="centrado">
+            @Html.DisplayNameFor(model=> model.PrecioVentaProducto)
+        </th>
+            
+   
+        <th>Opciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NroFactura)
+        </td>
+         <td>
+            @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(modelItem => item.FechaFactura).ToString()))
+         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreCliente)
+        </td>
+ 
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreProducto)
+        </td>
+        
+        <td>
+            S/.&nbsp;@Html.DisplayFor(modelItem => item.PrecioVentaProducto)
+        </td>
+
+        <td>
+            <a class="codigoDetalle" data-id="@item.Id" data-nrofactura="@item.NroFactura" data-producto="@item.NombreProducto" data-cliente="@item.NombreCliente">Seleccionar</a>
+        </td>
+    </tr>
+}
+    <tr>
+        <td colspan="3">Registros: @Model.Count() de @ViewBag.NroRegistros</td>
+        <td>Pagina @ViewBag.Page de @ViewBag.TotalPages</td>
+        <td colspan="3" class="derecha">
+            @for (int i = 1; i <= @ViewBag.TotalPages; i++)
+            {
+                <a class="paginacion" data-pagina="@i">@i</a>
+                @Html.Display(" ")
+            }
+        </td>
+    </tr>
+</table></table>
+>>>>>>> origin/master

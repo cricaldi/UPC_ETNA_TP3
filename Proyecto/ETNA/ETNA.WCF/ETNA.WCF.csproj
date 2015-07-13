@@ -70,7 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FB\LotesService.svc" />
+    <Content Include="FB\FabricacionService.svc" />
     <Content Include="LO\EntradasYSalidasService.svc" />
     <Content Include="PV\Facturas.svc" />
     <Content Include="PV\InformesReclamos.svc" />
@@ -80,10 +80,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FB\ILotesService.cs" />
-    <Compile Include="FB\LotesService.svc.cs">
-      <DependentUpon>LotesService.svc</DependentUpon>
+    <Compile Include="FB\FabricacionService.svc.cs">
+      <DependentUpon>FabricacionService.svc</DependentUpon>
     </Compile>
+    <Compile Include="FB\IFabricacionService.cs" />
     <Compile Include="LO\EntradasYSalidasService.svc.cs">
       <DependentUpon>EntradasYSalidasService.svc</DependentUpon>
     </Compile>
