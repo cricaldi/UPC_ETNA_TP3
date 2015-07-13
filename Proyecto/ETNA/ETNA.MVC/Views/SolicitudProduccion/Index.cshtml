@@ -65,8 +65,24 @@
         </td>         
 
         <td>
-            <a class="codigoDetalle" data-SolicitudProdId="@item.SolicitudProdId" >Seleccionar</a>
+             @Html.ActionLink("Seleccionar", "Select", @item.SolicitudProdId) 
+
+            <a class="codigoDetalle" data-SolicitudProdId="@item.SolicitudProdId" >Seleccionar.....</a>
         </td>
     </tr>
 }
+
+<tr>
+        <td colspan="3">Registros: @Model.Count() de @ViewBag.NroRegistros</td>
+        <td>Pagina @ViewBag.Page de @ViewBag.TotalPages</td>
+        <td colspan="3" class="derecha">
+            @for (int i = 1; i <= @ViewBag.TotalPages; i++)
+            {
+                <a class="paginacion" data-pagina="@i">@i</a>
+                @Html.Display(" ")
+            }
+        </td>
+    </tr>
+
+    
  </table>

@@ -24,5 +24,9 @@ namespace ETNA.MVC.Controllers.FB
             return View(model);
         }
 
+        public ActionResult DetalleSolicitudProduccion()
+        {
+            return View();
+        }
     }
 }

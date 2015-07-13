@@ -543,6 +543,7 @@
     <Content Include="Views\InformeReclamo\Edit.cshtml" />
     <Content Include="Views\Fabricacion\Index.cshtml" />
     <Content Include="Views\SolicitudProduccion\Index.cshtml" />
+    <Content Include="Views\SolicitudProduccion\DetalleSolicitudProduccion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
