@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:6078/PV/Reclamos.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Reclamos.xsd" MetadataType="Schema" ID="a51833b6-8fe0-40be-8331-c0be922bcfa1" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd1" />
-    <MetadataFile FileName="Reclamos.disco" MetadataType="Disco" ID="97a02a7e-bb8d-44dd-87e5-8c6653893d51" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?disco" />
     <MetadataFile FileName="Reclamos1.xsd" MetadataType="Schema" ID="511b19f2-371a-4394-93ea-c37942251a41" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd2" />
-    <MetadataFile FileName="Reclamos.wsdl" MetadataType="Wsdl" ID="fd7de7b3-6414-42e9-bd6c-d4af1405b612" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?wsdl" />
+    <MetadataFile FileName="Reclamos3.xsd" MetadataType="Schema" ID="f6c31fdb-d97a-4014-87bf-e8e522fcbcfc" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd3" />
     <MetadataFile FileName="Reclamos2.xsd" MetadataType="Schema" ID="92d6066f-d226-4393-9750-7db621742bb6" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd0" />
+    <MetadataFile FileName="Reclamos.xsd" MetadataType="Schema" ID="a51833b6-8fe0-40be-8331-c0be922bcfa1" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd1" />
+    <MetadataFile FileName="Reclamos.wsdl" MetadataType="Wsdl" ID="fd7de7b3-6414-42e9-bd6c-d4af1405b612" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?wsdl" />
+    <MetadataFile FileName="Reclamos.disco" MetadataType="Disco" ID="97a02a7e-bb8d-44dd-87e5-8c6653893d51" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

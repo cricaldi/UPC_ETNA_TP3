@@ -27,6 +27,7 @@ namespace ETNA.MVC.Models.PV
         public int EstadoProducto { get; set; }
         [DisplayName("Nombre del Cliente")]
         public string NombreCliente { get; set; }
-
+        [DisplayName("Dias Transurridos")]
+        public string DiasSinAtender{ get; set; }
     }
 }

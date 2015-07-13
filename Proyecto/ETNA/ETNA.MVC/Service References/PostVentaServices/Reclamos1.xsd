@@ -11,9 +11,10 @@
       <xs:element minOccurs="0" name="CodigoReclamo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DescripcionEstado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Detalle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiasSinAtender" type="xs:int" />
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaHoraReclamo" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FechaRespuesta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaRespuesta" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdFacturaDetalle" type="xs:int" />
       <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />

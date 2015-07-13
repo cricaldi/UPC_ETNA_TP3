@@ -53,10 +53,16 @@ namespace ETNA.MVC.InformesReclamosServices {
         private System.DateTime FechaElaboracionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FechaHoraReclamoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int InformeReclamoIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreAprobadorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreClienteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreElaboradorField;
@@ -208,6 +214,19 @@ namespace ETNA.MVC.InformesReclamosServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FechaHoraReclamo {
+            get {
+                return this.FechaHoraReclamoField;
+            }
+            set {
+                if ((this.FechaHoraReclamoField.Equals(value) != true)) {
+                    this.FechaHoraReclamoField = value;
+                    this.RaisePropertyChanged("FechaHoraReclamo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int InformeReclamoId {
             get {
                 return this.InformeReclamoIdField;
@@ -229,6 +248,19 @@ namespace ETNA.MVC.InformesReclamosServices {
                 if ((object.ReferenceEquals(this.NombreAprobadorField, value) != true)) {
                     this.NombreAprobadorField = value;
                     this.RaisePropertyChanged("NombreAprobador");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreCliente {
+            get {
+                return this.NombreClienteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreClienteField, value) != true)) {
+                    this.NombreClienteField = value;
+                    this.RaisePropertyChanged("NombreCliente");
                 }
             }
         }
@@ -287,10 +319,10 @@ namespace ETNA.MVC.InformesReclamosServices {
     public interface IInformesReclamos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/InsertarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/InsertarInformeReclamoResponse")]
-        int InsertarInformeReclamo(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId);
+        int InsertarInformeReclamo(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int IdUsuario, int aprobadoPorId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/InsertarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/InsertarInformeReclamoResponse")]
-        System.Threading.Tasks.Task<int> InsertarInformeReclamoAsync(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId);
+        System.Threading.Tasks.Task<int> InsertarInformeReclamoAsync(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int IdUsuario, int aprobadoPorId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/EditarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/EditarInformeReclamoResponse")]
         bool EditarInformeReclamo(int idInforme, string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId);
@@ -303,6 +335,18 @@ namespace ETNA.MVC.InformesReclamosServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ListaInfomesReclamos", ReplyAction="http://tempuri.org/IInformesReclamos/ListaInfomesReclamosResponse")]
         System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInfomesReclamosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientes", ReplyAction="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientesResponse")]
+        ETNA.MVC.InformesReclamosServices.InformeReclamoDto[] ListaInformesReclamosPendientes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientes", ReplyAction="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientesResponse")]
+        System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInformesReclamosPendientesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/AprobarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/AprobarInformeReclamoResponse")]
+        bool AprobarInformeReclamo(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/AprobarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/AprobarInformeReclamoResponse")]
+        System.Threading.Tasks.Task<bool> AprobarInformeReclamoAsync(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ObtenerInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/ObtenerInformeReclamoResponse")]
         ETNA.MVC.InformesReclamosServices.InformeReclamoDto ObtenerInformeReclamo(int idInforme);
@@ -338,12 +382,12 @@ namespace ETNA.MVC.InformesReclamosServices {
                 base(binding, remoteAddress) {
         }
         
-        public int InsertarInformeReclamo(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId) {
-            return base.Channel.InsertarInformeReclamo(codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, elboradoPorId, aprobadoPorId);
+        public int InsertarInformeReclamo(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int IdUsuario, int aprobadoPorId) {
+            return base.Channel.InsertarInformeReclamo(codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, IdUsuario, aprobadoPorId);
         }
         
-        public System.Threading.Tasks.Task<int> InsertarInformeReclamoAsync(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId) {
-            return base.Channel.InsertarInformeReclamoAsync(codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, elboradoPorId, aprobadoPorId);
+        public System.Threading.Tasks.Task<int> InsertarInformeReclamoAsync(string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int IdUsuario, int aprobadoPorId) {
+            return base.Channel.InsertarInformeReclamoAsync(codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, IdUsuario, aprobadoPorId);
         }
         
         public bool EditarInformeReclamo(int idInforme, string codigoInforme, string descripcion, string detalleInforme, System.DateTime fechaAprobacion, System.DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId) {
@@ -360,6 +404,22 @@ namespace ETNA.MVC.InformesReclamosServices {
         
         public System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInfomesReclamosAsync() {
             return base.Channel.ListaInfomesReclamosAsync();
+        }
+        
+        public ETNA.MVC.InformesReclamosServices.InformeReclamoDto[] ListaInformesReclamosPendientes() {
+            return base.Channel.ListaInformesReclamosPendientes();
+        }
+        
+        public System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInformesReclamosPendientesAsync() {
+            return base.Channel.ListaInformesReclamosPendientesAsync();
+        }
+        
+        public bool AprobarInformeReclamo(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario) {
+            return base.Channel.AprobarInformeReclamo(idInforme, fechaAprobacion, observacionAprobador, estado, idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AprobarInformeReclamoAsync(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario) {
+            return base.Channel.AprobarInformeReclamoAsync(idInforme, fechaAprobacion, observacionAprobador, estado, idUsuario);
         }
         
         public ETNA.MVC.InformesReclamosServices.InformeReclamoDto ObtenerInformeReclamo(int idInforme) {

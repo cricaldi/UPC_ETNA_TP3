@@ -1,4 +1,4 @@
-﻿@using System.Globalization
+﻿
 @model IEnumerable<ETNA.MVC.Models.PV.InformeReclamoViewModel>
 
 @{
@@ -15,10 +15,8 @@
 </style>
 
 
-<h2>Informes de Reclamos Registrados</h2> 
-<p>
-    @Html.ActionLink("Crear Informe", "Create")
-</p>
+<h2>Informes de Reclamos pendientes de Aprobación</h2> 
+
 <table>
     <tr>
         <th>
@@ -74,16 +72,18 @@
        
         <td>
                  
-            @if (item.Estado == "E" )
+            @if (item.Estado != "P" )
             {
-                @Html.ActionLink("Modificar", "Edit", new {id = 0 })
+                @Html.ActionLink("Aprobar/Rechazar", "Aprobar", new {id = item.InformeReclamoId })
             }
             else
             {
-                <a href="#" class="btndenegado">Modificar</a>
+                <a href="#" class="btndenegado">Aprobar/Rechazar</a>
             } |
 
-            @Html.ActionLink("Ver", "Details", new { id=item.InformeReclamoId   }) 
+            @Html.ActionLink("Ver Informe", "Details","InformeReclamo", new { id=item.InformeReclamoId   },null) 
+      
+     
      
         </td>
     </tr>
@@ -97,9 +97,9 @@
     @Scripts.Render("~/bundles/jqueryval")
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $(".btndenegado").click(function() {
-                alert("No se puede editar, por que se encuentra Aprobado o Rechazado");
+        $(document).ready(function () {
+            $(".btndenegado").click(function () {
+                alert("Solo se pueden Aprobar o Rechazar informes Pendientes");
             });
         });
     </script>

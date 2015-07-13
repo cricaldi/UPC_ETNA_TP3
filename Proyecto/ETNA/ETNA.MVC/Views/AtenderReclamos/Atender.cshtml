@@ -1,0 +1,159 @@
+﻿@model ETNA.MVC.Models.PV.InformeReclamoViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+<script type="text/javascript">
+
+    function load() {
+        var fecha = new Date();
+        var dd = fecha.getDate();
+        var mm = fecha.getMonth() + 1;
+        var yyyy = fecha.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        fecha = dd + "/" + mm + "/" + yyyy;
+
+        document.getElementById("FechaElaboracion").value = fecha;
+
+    }
+    window.onload = load;
+    function mensaje() {
+        alert("El Reclamo se guardo correctamente");
+        /*window.close();*/
+    }
+</script>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>InformeReclamoViewModel</legend>
+
+    <table style="border: 1px solid white">
+            <tr>
+                <td style="text-align: center; font-size: 20px; font-weight: bold;" colspan="4" style="width:100%">Nuevo Informe Para Atender Reclamo</td>
+            </tr>        
+            <tr>
+                <td>@Html.LabelFor(model => model.CodigoInforme)</td>
+                <td style="text-align: left">
+                </td>
+                <td>@Html.LabelFor(model => model.DescripcionEstado)</td>
+                <td style="text-align: left">
+                   Elaborado
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.FechaElaboracion)</td>
+                <td style="text-align: left">
+                    @Html.TextBoxFor(model => model.FechaElaboracion,(object)new {disabled="disabled",Style="background:#cccccc;" })
+                </td>
+                <td>@Html.LabelFor(model => model.FechaAprobacion)</td>
+                <td style="text-align: left">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Descripcion)</td>
+            <td colspan="3" style="text-align: left">
+                @Html.TextAreaFor(model => model.Descripcion)
+                @Html.ValidationMessageFor(model => model.Descripcion)
+            </td>
+        </tr>
+           
+
+            @Html.HiddenFor(model => model.ReclamoId)
+            @Html.ValidationMessageFor(model => model.ReclamoId)
+            <tr>
+                <td>@Html.LabelFor(model => model.CodigoReclamo)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.TextBoxFor(model => model.CodigoReclamo,(object)new {disabled="disabled",Style="background:#cccccc;" })
+                  
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.FechaHoraReclamo)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.DisplayFor(model => model.FechaHoraReclamo)
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.NombreCliente)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.DisplayFor(model => model.NombreCliente)
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.DetalleInforme)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.TextAreaFor(model => model.DetalleInforme)
+                    @Html.ValidationMessageFor(model => model.DetalleInforme)
+                </td>
+            </tr>  
+            
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input type="submit" value="Grabar" name="btnGrabar" id="btnGrabar" />
+                </td>
+                <td colspan="2" style="text-align: center">
+                   @Html.ActionLink("Regresar", null, null, null, new { href = Request.UrlReferrer})
+                </td>
+            </tr>  
+
+        </table>
+     </fieldset>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+           
+            $("#btnGrabar").live('click', function () {
+
+                var descripcion = $("#Descripcion").val();
+                var detalle = $("#DetalleInforme").val();
+                var idReclamo = $("#ReclamoId").val();
+
+                if (descripcion == null || descripcion == "") {
+                    alert("Debe ingresar la descripcion del informe");
+                    $("#Descripcion").focus();
+                    return false;
+                }
+                if (detalle == null || detalle == "") {
+                    alert("Debe ingresar el Detalle del Informe");
+                    $("#DetalleInforme").focus();
+                    return false;
+                }
+
+                if (idReclamo == null || idReclamo == "") {
+                    alert("Debe ingresar el Id del Reclamo");
+                    $("#ReclamoId").focus();
+                    return false;
+                }
+
+                if (confirm("¿Desea Registrar el Informe del reclamo?")) {
+                    alert("Se registró correctamente el reclamo");
+                } else {
+                    return false;
+                }
+
+            });
+        });
+    </script>
+
+}

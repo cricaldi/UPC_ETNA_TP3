@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ETNA.MVC.Models.PV.ReclamoViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "AtenderReclamo";
     
 }
 <link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
@@ -14,13 +14,10 @@
 </style>
 
 
-<h2>Reclamos Registrados</h2> 
+<h2>Atender Reclamos Pendientes</h2> 
 
 
 
-<p>
-    @Html.ActionLink("Crear Reclamo", "Create")
-</p>
 
 <table class="ui-tabs-selected" style="width:100%">
     <tr>
@@ -46,9 +43,9 @@
             @Html.DisplayNameFor(model=> model.FechaHoraReclamo)
         </th>
             
-        <th class="centrado">
-            @Html.DisplayNameFor(model=> model.FechaRespuesta)
-        </th>
+            <th class="centrado">
+               @Html.DisplayNameFor(model=> model.DiasSinAtender)
+            </th>
         <th class="centrado">
             @Html.DisplayNameFor(model => model.Estado)
         </th>
@@ -79,10 +76,7 @@
         
         <td>
  
-            @if (Html.DisplayFor(modelItem => item.FechaRespuesta).ToString() != "01/01/0001")
-            {
-                @Html.DisplayFor(modelItem => item.FechaRespuesta)
-            }
+                @Html.DisplayFor(modelItem => item.DiasSinAtender)
         </td>
 
 
@@ -94,14 +88,14 @@
             
             @if (item.Estado == "P")
             {
-                @Html.ActionLink("Modificar", "Edit", new {id = item.Id})
+                @Html.ActionLink("Atender", "Atender",new {id =item.Id})
             }
             else
             {
-                <a href="#" class="btndenegado">Modificar</a>
+                <a href="#" class="btndenegado">Atender</a>
             } |
 
-            @Html.ActionLink("Ver", "Details", new { id=item.Id  }) 
+            @Html.ActionLink("Ver", "Details","Reclamo", new { id=item.Id },null) 
      
         </td>
     </tr>
@@ -116,9 +110,9 @@
     @Scripts.Render("~/bundles/jqueryval")
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $(".btndenegado").click(function(){
-                alert("Solo se pueden modificar reclamos Pendientes");
+        $(document).ready(function () {
+            $(".btndenegado").click(function () {
+                alert("Solo se pueden atender reclamos Pendientes");
             });
         });
     </script>

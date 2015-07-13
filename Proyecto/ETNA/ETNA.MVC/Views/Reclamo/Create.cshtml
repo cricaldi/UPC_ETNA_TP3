@@ -8,30 +8,24 @@
     
     function load() {
         var fecha = new Date();
-        fecha = "0" + fecha.getDate() + "/0" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
-        // por regla de negocio, La fecha de respuesta son 5 días despues  de la fecha de reclamo.
-        var nuevaFecha = mostrarFecha(5);
+        var dd = fecha.getDate();
+        var mm = fecha.getMonth() + 1;
+        var yyyy = fecha.getFullYear();
+        if (dd < 10)
+        {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
 
+        fecha = dd + "/" + mm + "/" + yyyy;
+         
         document.getElementById("FechaHoraReclamo").value = fecha;
-        document.getElementById("FechaRespuesta").value = nuevaFecha;
+       
     }
     window.onload = load;
 
-    function mostrarFecha(days) {
-        var fecha = new Date();
-        var day = fecha.getDate()+days;
-        var month = fecha.getMonth() + 1;
-        var year = fecha.getFullYear();
-
-        //var tiempo = fecha.getTime();
-        //var milisegundos = parseInt(days * 24 * 60 * 60 * 1000);
-        //var total = fecha.setTime(tiempo + milisegundos);
-        day = (fecha.getDate().toString.length != 1) ? "0" + day : day;
-        //month = (fecha.getDate().toString.length != 1) ? "0" + fecha.getDate() : fecha.getDate();
-        //year = fecha.getFullYear();
-        return "" + day + "/0" + month + "/" + year;
-        return total;
-    }
     function mensaje() {
         alert("El Reclamo se guardo correctamente");
         /*window.close();*/
@@ -66,10 +60,10 @@
                     @Html.TextBoxFor(model => model.FechaHoraReclamo,(object)new {disabled="disabled",Style="background:#cccccc;" })
                  </td>
                 <td>@Html.LabelFor(model => model.FechaRespuesta)</td>
-                <td>
-                    @Html.TextBoxFor(model => model.FechaRespuesta,(object)new {disabled="disabled",Style="background:#cccccc;" })
-                 </td>
-            </tr>  
+                 <td>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </td>
+           </tr>  
 
             <tr>
                 <td>@Html.LabelFor(model => model.Motivo)</td>
@@ -115,7 +109,7 @@
                 <td colspan="4" style="text-align: left">
                     @Html.TextBoxFor(model => model.NombreProducto,(object)new {disabled="disabled",Style="background:#cccccc;" })
                 </td>
-            </tr>  
+            </tr>
             
             <tr>
                 <td>@Html.LabelFor(model => model.Detalle)</td>
@@ -163,7 +157,7 @@
                 var facturaId = $("#FacturaId").val();
 
                 if (facturaId !== "") {
-                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> loading...');
+                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> Buscando...');
 
                     var request = $.ajax({
                         url: "/Factura/Details/" + facturaId,

@@ -1,8 +1,8 @@
 ﻿@using Microsoft.Ajax.Utilities
-@model IEnumerable<ETNA.MVC.Models.PV.FacturaDetalleViewModel>
+@model IEnumerable<ETNA.MVC.Models.PV.ReclamoViewModel>
 
 @{
-    ViewBag.Title = "Facturas Detalle";
+    ViewBag.Title = "Lista de Reclamos";
     Layout = null;
 }
 <link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
@@ -23,8 +23,8 @@
     }     
 </style>
 
-<!--<h1>Cliente:</h1>-->
-<h2>Facturas Detalle Registradas</h2>
+<h2>Lista de Reclamos Registrados</h2>
+
 
 <table class="ui-tabs-selected" style="width:100%">
     <tr>
@@ -32,56 +32,60 @@
     </tr>
     <tr>
         <th class="centrado">
-            @Html.DisplayNameFor(model => model.NroFactura)
+            @Html.DisplayNameFor(model => model.CodigoReclamo)
         </th>
-         <th class="centrado">
-            @Html.DisplayNameFor(model => model.FechaFactura)
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.FechaHoraReclamo)
         </th>
         <th class="centrado">
             @Html.DisplayNameFor(model => model.NombreCliente)
         </th>
-
-            
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.Motivo)
+        </th>
         <th class="centrado">
             @Html.DisplayNameFor(model => model.NombreProducto)
         </th>
-        
         <th class="centrado">
-            @Html.DisplayNameFor(model=> model.PrecioVentaProducto)
+            @Html.DisplayNameFor(model => model.NumeroFactura)
         </th>
-            
-   
         <th>Opciones</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.NroFactura)
+            @Html.DisplayFor(modelItem => item.CodigoReclamo)
         </td>
-         <td>
-            @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(modelItem => item.FechaFactura).ToString()))
-         </td>
+        
+        <td>
+            @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(modelItem => item.FechaHoraReclamo).ToString()))
+        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.NombreCliente)
         </td>
  
         <td>
-            @Html.DisplayFor(modelItem => item.NombreProducto)
+            @Html.DisplayFor(modelItem => item.Motivo)
         </td>
         
         <td>
-            S/.&nbsp;@Html.DisplayFor(modelItem => item.PrecioVentaProducto)
+            @Html.DisplayFor(modelItem => item.NombreProducto)
         </td>
 
         <td>
-            <a class="codigoDetalle" data-id="@item.Id" data-nrofactura="@item.NroFactura" data-producto="@item.NombreProducto" data-cliente="@item.NombreCliente">Seleccionar</a>
+            @Html.DisplayFor(modelItem => item.NumeroFactura)
+        </td>
+
+        <td>
+            <a class="idReclamo" data-id="@item.Id" data-codigoreclamo="@item.CodigoReclamo" data-fechahora="@item.FechaHoraReclamo" data-cliente="@item.NombreCliente">Seleccionar</a>
         </td>
     </tr>
 }
     <tr>
         <td colspan="3">Registros: @Model.Count() de @ViewBag.NroRegistros</td>
-        <td>Pagina @ViewBag.Page de @ViewBag.TotalPages</td>
+        <td>Pag. @ViewBag.Page de @ViewBag.TotalPages</td>
         <td colspan="3" class="derecha">
             @for (int i = 1; i <= @ViewBag.TotalPages; i++)
             {

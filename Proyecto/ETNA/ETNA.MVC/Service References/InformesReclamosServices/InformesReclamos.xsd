@@ -12,7 +12,7 @@
         <xs:element minOccurs="0" name="observacionAprobador" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="reclamoId" type="xs:int" />
-        <xs:element minOccurs="0" name="elboradoPorId" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
         <xs:element minOccurs="0" name="aprobadoPorId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -60,6 +60,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaInformesReclamosPendientes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaInformesReclamosPendientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ListaInformesReclamosPendientesResult" nillable="true" type="q2:ArrayOfInformeReclamoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AprobarInformeReclamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idInforme" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaAprobacion" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="observacionAprobador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AprobarInformeReclamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AprobarInformeReclamoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ObtenerInformeReclamo">
     <xs:complexType>
       <xs:sequence>
@@ -70,7 +100,7 @@
   <xs:element name="ObtenerInformeReclamoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ObtenerInformeReclamoResult" nillable="true" type="q2:InformeReclamoDto" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ObtenerInformeReclamoResult" nillable="true" type="q3:InformeReclamoDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

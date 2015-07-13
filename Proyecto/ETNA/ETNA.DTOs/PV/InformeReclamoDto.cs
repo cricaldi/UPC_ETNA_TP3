@@ -50,5 +50,11 @@ namespace ETNA.DTOs.PV
           public string DescripcionEstado { get; set; }
           [DataMember]
           public string CodigoReclamo { get; set; }
+
+         [DataMember]
+          public string NombreCliente { get; set; }
+
+         [DataMember]
+          public System.DateTime FechaHoraReclamo { get; set; }
     }
 }

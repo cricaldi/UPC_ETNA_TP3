@@ -18,8 +18,10 @@
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaAprobacion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaElaboracion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaHoraReclamo" type="xs:dateTime" />
       <xs:element minOccurs="0" name="InformeReclamoId" type="xs:int" />
       <xs:element minOccurs="0" name="NombreAprobador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreElaborador" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ObservacionAprobador" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ReclamoId" type="xs:int" />

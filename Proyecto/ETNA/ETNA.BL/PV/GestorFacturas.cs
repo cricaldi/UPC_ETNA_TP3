@@ -32,9 +32,9 @@ namespace ETNA.BL.PV
             var context = new INTEGRADOModelContainer();
             var list = new List<int>();
 
-            //            var total = context.FacturaDetalles.Where(d => d.Factura.NroFactura.Contains(nroFactura)).ToList().Count;
+            //var total = context.FacturaDetalles.Where(d => d.Factura.NroFactura.Contains(nroFactura)).ToList().Count;
             // No exite numero de factura sunat en tabla
-            var total = context.TB_VT_FacturaDetalles.ToList().Count;
+            var total = context.TB_VT_FacturaDetalles.Where(d => d.TB_VT_Facturas.NumeroFact.Contains(nroFactura)).ToList().Count;
 
             list.Add(total);
             list.Add((total / GestorFacturas.TamanoPaginas) + 1);

@@ -32,13 +32,16 @@ namespace ETNA.MVC.PostVentaServices {
         private string DetalleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DiasSinAtenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime FechaHoraReclamoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FechaRespuestaField;
+        private System.Nullable<System.DateTime> FechaRespuestaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -114,6 +117,19 @@ namespace ETNA.MVC.PostVentaServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DiasSinAtender {
+            get {
+                return this.DiasSinAtenderField;
+            }
+            set {
+                if ((this.DiasSinAtenderField.Equals(value) != true)) {
+                    this.DiasSinAtenderField = value;
+                    this.RaisePropertyChanged("DiasSinAtender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Estado {
             get {
                 return this.EstadoField;
@@ -140,7 +156,7 @@ namespace ETNA.MVC.PostVentaServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FechaRespuesta {
+        public System.Nullable<System.DateTime> FechaRespuesta {
             get {
                 return this.FechaRespuestaField;
             }
@@ -271,10 +287,10 @@ namespace ETNA.MVC.PostVentaServices {
     public interface IReclamos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/InsertarReclamo", ReplyAction="http://tempuri.org/IReclamos/InsertarReclamoResponse")]
-        int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle);
+        int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/InsertarReclamo", ReplyAction="http://tempuri.org/IReclamos/InsertarReclamoResponse")]
-        System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle);
+        System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/EditarReclamo", ReplyAction="http://tempuri.org/IReclamos/EditarReclamoResponse")]
         bool EditarReclamo(int idReclamo, string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle);
@@ -282,17 +298,41 @@ namespace ETNA.MVC.PostVentaServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/EditarReclamo", ReplyAction="http://tempuri.org/IReclamos/EditarReclamoResponse")]
         System.Threading.Tasks.Task<bool> EditarReclamoAsync(int idReclamo, string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ActualizarEstadoReclamo", ReplyAction="http://tempuri.org/IReclamos/ActualizarEstadoReclamoResponse")]
+        bool ActualizarEstadoReclamo(int idReclamo, string estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ActualizarEstadoReclamo", ReplyAction="http://tempuri.org/IReclamos/ActualizarEstadoReclamoResponse")]
+        System.Threading.Tasks.Task<bool> ActualizarEstadoReclamoAsync(int idReclamo, string estado);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListaReclamos", ReplyAction="http://tempuri.org/IReclamos/ListaReclamosResponse")]
         ETNA.MVC.PostVentaServices.ReclamoDto[] ListaReclamos();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListaReclamos", ReplyAction="http://tempuri.org/IReclamos/ListaReclamosResponse")]
         System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListaReclamosAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListaReclamosPendientes", ReplyAction="http://tempuri.org/IReclamos/ListaReclamosPendientesResponse")]
+        ETNA.MVC.PostVentaServices.ReclamoDto[] ListaReclamosPendientes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListaReclamosPendientes", ReplyAction="http://tempuri.org/IReclamos/ListaReclamosPendientesResponse")]
+        System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListaReclamosPendientesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ObtenerReclamo", ReplyAction="http://tempuri.org/IReclamos/ObtenerReclamoResponse")]
         ETNA.MVC.PostVentaServices.ReclamoDto ObtenerReclamo(int idReclamo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ObtenerReclamo", ReplyAction="http://tempuri.org/IReclamos/ObtenerReclamoResponse")]
         System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto> ObtenerReclamoAsync(int idReclamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/NroPaginasPorCodigoReclamo", ReplyAction="http://tempuri.org/IReclamos/NroPaginasPorCodigoReclamoResponse")]
+        int[] NroPaginasPorCodigoReclamo(string codigoReclamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/NroPaginasPorCodigoReclamo", ReplyAction="http://tempuri.org/IReclamos/NroPaginasPorCodigoReclamoResponse")]
+        System.Threading.Tasks.Task<int[]> NroPaginasPorCodigoReclamoAsync(string codigoReclamo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListarReclamosPorCodigo", ReplyAction="http://tempuri.org/IReclamos/ListarReclamosPorCodigoResponse")]
+        ETNA.MVC.PostVentaServices.ReclamoDto[] ListarReclamosPorCodigo(string codigoReclamo, int nroPagina);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListarReclamosPorCodigo", ReplyAction="http://tempuri.org/IReclamos/ListarReclamosPorCodigoResponse")]
+        System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListarReclamosPorCodigoAsync(string codigoReclamo, int nroPagina);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -322,12 +362,12 @@ namespace ETNA.MVC.PostVentaServices {
                 base(binding, remoteAddress) {
         }
         
-        public int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle) {
-            return base.Channel.InsertarReclamo(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle);
+        public int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario) {
+            return base.Channel.InsertarReclamo(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle, idUsuario);
         }
         
-        public System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle) {
-            return base.Channel.InsertarReclamoAsync(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle);
+        public System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario) {
+            return base.Channel.InsertarReclamoAsync(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle, idUsuario);
         }
         
         public bool EditarReclamo(int idReclamo, string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle) {
@@ -338,6 +378,14 @@ namespace ETNA.MVC.PostVentaServices {
             return base.Channel.EditarReclamoAsync(idReclamo, codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle);
         }
         
+        public bool ActualizarEstadoReclamo(int idReclamo, string estado) {
+            return base.Channel.ActualizarEstadoReclamo(idReclamo, estado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ActualizarEstadoReclamoAsync(int idReclamo, string estado) {
+            return base.Channel.ActualizarEstadoReclamoAsync(idReclamo, estado);
+        }
+        
         public ETNA.MVC.PostVentaServices.ReclamoDto[] ListaReclamos() {
             return base.Channel.ListaReclamos();
         }
@@ -346,12 +394,36 @@ namespace ETNA.MVC.PostVentaServices {
             return base.Channel.ListaReclamosAsync();
         }
         
+        public ETNA.MVC.PostVentaServices.ReclamoDto[] ListaReclamosPendientes() {
+            return base.Channel.ListaReclamosPendientes();
+        }
+        
+        public System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListaReclamosPendientesAsync() {
+            return base.Channel.ListaReclamosPendientesAsync();
+        }
+        
         public ETNA.MVC.PostVentaServices.ReclamoDto ObtenerReclamo(int idReclamo) {
             return base.Channel.ObtenerReclamo(idReclamo);
         }
         
         public System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto> ObtenerReclamoAsync(int idReclamo) {
             return base.Channel.ObtenerReclamoAsync(idReclamo);
+        }
+        
+        public int[] NroPaginasPorCodigoReclamo(string codigoReclamo) {
+            return base.Channel.NroPaginasPorCodigoReclamo(codigoReclamo);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> NroPaginasPorCodigoReclamoAsync(string codigoReclamo) {
+            return base.Channel.NroPaginasPorCodigoReclamoAsync(codigoReclamo);
+        }
+        
+        public ETNA.MVC.PostVentaServices.ReclamoDto[] ListarReclamosPorCodigo(string codigoReclamo, int nroPagina) {
+            return base.Channel.ListarReclamosPorCodigo(codigoReclamo, nroPagina);
+        }
+        
+        public System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListarReclamosPorCodigoAsync(string codigoReclamo, int nroPagina) {
+            return base.Channel.ListarReclamosPorCodigoAsync(codigoReclamo, nroPagina);
         }
     }
 }

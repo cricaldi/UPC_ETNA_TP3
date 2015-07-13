@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:6078/PV/Reclamos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" />
+  <xs:import schemaLocation="http://localhost:6078/PV/Reclamos.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="InsertarReclamo">
     <xs:complexType>
       <xs:sequence>
@@ -12,6 +13,7 @@
         <xs:element minOccurs="0" name="fechaRespuesta" type="xs:dateTime" />
         <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idFacturaDetalle" type="xs:int" />
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -44,6 +46,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarEstadoReclamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReclamo" type="xs:int" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoReclamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarEstadoReclamoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListaReclamos">
     <xs:complexType>
       <xs:sequence />
@@ -53,6 +70,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ListaReclamosResult" nillable="true" type="q1:ArrayOfReclamoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaReclamosPendientes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaReclamosPendientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ListaReclamosPendientesResult" nillable="true" type="q2:ArrayOfReclamoDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +95,36 @@
   <xs:element name="ObtenerReclamoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ObtenerReclamoResult" nillable="true" type="q2:ReclamoDto" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ObtenerReclamoResult" nillable="true" type="q3:ReclamoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NroPaginasPorCodigoReclamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoReclamo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NroPaginasPorCodigoReclamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NroPaginasPorCodigoReclamoResult" nillable="true" type="q4:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarReclamosPorCodigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoReclamo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nroPagina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarReclamosPorCodigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ListarReclamosPorCodigoResult" nillable="true" type="q5:ArrayOfReclamoDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

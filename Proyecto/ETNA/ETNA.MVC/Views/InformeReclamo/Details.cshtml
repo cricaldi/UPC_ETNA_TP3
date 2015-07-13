@@ -33,11 +33,11 @@
                 <td>@Html.LabelFor(model => model.FechaAprobacion)</td>
                 <td colspan="3" style="text-align: left">
                 
-                   @if (@Html.DisplayFor(model => model.FechaElaboracion).ToString() == "0001-01-01")
-            {
-
-                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(model => Model.FechaAprobacion).ToString()));
-            }
+                            @if (Html.DisplayFor(model => model.FechaAprobacion).ToString() != "01/01/0001")
+                         {
+                             @Html.DisplayFor(model => model.FechaAprobacion)
+                         }
+    
  
                 </td>
             </tr>  
@@ -56,7 +56,20 @@
              
                 </td>
             </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.FechaHoraReclamo)</td>
+                <td colspan="7" style="text-align: left">
+                    @Html.DisplayFor(model => model.FechaHoraReclamo)
+                    
+                </td>
+            </tr>
             
+            <tr>
+                <td>@Html.LabelFor(model => model.NombreCliente)</td>
+                <td colspan="7" style="text-align: left">
+                    @Html.DisplayFor(model => model.NombreCliente)
+                 </td>
+            </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.DetalleInforme)</td>
                 <td colspan="7" style="text-align: left">
@@ -85,7 +98,9 @@
             
             <tr>
                 <td colspan="8" style="text-align: center">
-                    @Html.ActionLink("Regresar", "Index")
+                  
+                      @Html.ActionLink("Regresar", null, null, null, new { href = Request.UrlReferrer})
+                    
                 </td>
             </tr>  
 
