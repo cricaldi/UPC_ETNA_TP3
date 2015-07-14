@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4613B2CB-BDE4-4287-92D5-05C833B41282}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ETNA.SGI.Presentacion</RootNamespace>
+    <AssemblyName>ETNA.SGI.Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RibbonForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RibbonForm1.Designer.cs">
+      <DependentUpon>RibbonForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmComprobanteVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmComprobanteVenta.designer.cs">
+      <DependentUpon>frmComprobanteVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmCliente.designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultaCuotaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultaCuotaVenta.Designer.cs">
+      <DependentUpon>frmConsultaCuotaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultaPedido.designer.cs">
+      <DependentUpon>frmConsultaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultarAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultarAlmacen.designer.cs">
+      <DependentUpon>frmConsultarAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultarCliente.designer.cs">
+      <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultarDireccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultarDireccion.designer.cs">
+      <DependentUpon>frmConsultarDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultarProducto.designer.cs">
+      <DependentUpon>frmConsultarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultarVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultarVendedor.designer.cs">
+      <DependentUpon>frmConsultarVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultaTipoCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultaTipoCP.Designer.cs">
+      <DependentUpon>frmConsultaTipoCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultaxZona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmConsultaxZona.Designer.cs">
+      <DependentUpon>frmConsultaxZona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmCuotaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmCuotaVenta.Designer.cs">
+      <DependentUpon>frmCuotaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmFacturacionenLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmFacturacionenLote.Designer.cs">
+      <DependentUpon>frmFacturacionenLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmListadePrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmListadePrecios.Designer.cs">
+      <DependentUpon>frmListadePrecios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmListListadoPrecioscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmListListadoPrecioscs.Designer.cs">
+      <DependentUpon>frmListListadoPrecioscs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmPedido.designer.cs">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmUpPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmUpPedido.designer.cs">
+      <DependentUpon>frmUpPedido.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Venta\frmComprobanteVenta.resx">
+      <DependentUpon>frmComprobanteVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultaCuotaVenta.resx">
+      <DependentUpon>frmConsultaCuotaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultaPedido.resx">
+      <DependentUpon>frmConsultaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultarAlmacen.resx">
+      <DependentUpon>frmConsultarAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultarCliente.resx">
+      <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultarDireccion.resx">
+      <DependentUpon>frmConsultarDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultarProducto.resx">
+      <DependentUpon>frmConsultarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultarVendedor.resx">
+      <DependentUpon>frmConsultarVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultaTipoCP.resx">
+      <DependentUpon>frmConsultaTipoCP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultaxZona.resx">
+      <DependentUpon>frmConsultaxZona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmCuotaVenta.resx">
+      <DependentUpon>frmCuotaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmFacturacionenLote.resx">
+      <DependentUpon>frmFacturacionenLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmListadePrecios.resx">
+      <DependentUpon>frmListadePrecios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmListListadoPrecioscs.resx">
+      <DependentUpon>frmListListadoPrecioscs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmUpPedido.resx">
+      <DependentUpon>frmUpPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Copia de Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Find%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Find%291.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abrir.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abrir1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AC.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACCESOS.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACCESOS12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Access1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACERCA DE.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACERCA DE12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACTUALIZ.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACTUALIZ1.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ANULAR.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ANULAR12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apercu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apercu1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aprobado.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\APROBAR.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASNT.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASNT1.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra011.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra012.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baterias1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baterias2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BO.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BO12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BO121.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnConfiguracion.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnIngresar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSalir.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUSCAR.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarAbonados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CALC1.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CALCULA.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CIERRPER.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLIENTES.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLIENTES12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultapedido.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DGA_lupa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EDITAR.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ELIMINA.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ELIMINA1.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ELIMINA12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ERASE02.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ETc.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\etna.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\etna.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ETNAIMAGE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FA112.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FACTURAR12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FonodAmarillo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Footer1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GRABAR12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GRABARAR12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GRABARAR112.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GRABARAR1121.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HLP-UP12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_excel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_excel1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagenCabecera1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMPRESOR.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImprimeOC12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMPRIMIR.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\INICIAR.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inicio12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intro.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IntroET.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llantita.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOCKED.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lq12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODIFICA12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\non.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOTAS12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NUEVO.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NUEVO1.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NUEVO12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Operaciones.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pcbr.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PP.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PREGUNTA12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PROCESO.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PROCESO1.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRODUC.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRODUCTO12.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REFRESH.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REFRESH12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REFRESH121.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REPORTE12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SALIDA.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SALIDA12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SALIDA121.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAVEPLUS.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SQLSIM.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TIPOCAMB12.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ETNA.BL\ETNA.BL.csproj">
+      <Project>{72a26d14-ec17-4557-9b1b-d77555bfbc54}</Project>
+      <Name>ETNA.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ETNA.Domain\ETNA.Domain.csproj">
+      <Project>{25235949-3740-407a-9cfc-3a1af58c18e3}</Project>
+      <Name>ETNA.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atlas-energia-factura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grupoventa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planventa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presupuesto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previsionventa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vendedor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listaprecio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tipocomprobante.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
